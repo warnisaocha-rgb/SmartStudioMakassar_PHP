@@ -1,0 +1,82 @@
+[
+  {
+    "id": 1,
+    "judul": "Wisuda Sarjana \u2014 Warm Editorial",
+    "kategori": "wisuda",
+    "kategoriLabel": "Wisuda",
+    "tahun": "2024",
+    "lokasi": "Studio 1 (Warm Ivory)",
+    "deskripsi": "Pose wisuda formal namun tetap rileks dengan penataan key light lembut dan backdrop warm cream.",
+    "gambar": "assets/wisuda-sendiri.jpg"
+  },
+  {
+    "id": 2,
+    "judul": "Self Photo \u2014 Minimalist Duo",
+    "kategori": "self-photo",
+    "kategoriLabel": "Self Photo",
+    "tahun": "2024",
+    "lokasi": "Self Studio Room B",
+    "deskripsi": "Sesi kasual sepasang sahabat dengan remote klik mandiri berlatar abu-abu netral.",
+    "gambar": "assets/self-foto.jpg"
+  },
+  {
+    "id": 3,
+    "judul": "Buku Tahunan Sekolah",
+    "kategori": "yearbook",
+    "kategoriLabel": "Yearbook",
+    "tahun": "2024",
+    "lokasi": "Mini Studio Concept",
+    "deskripsi": "Nuansa hangat dan intim dengan pencahayaan rim-light lembut bernuansa earth-tone.",
+    "gambar": "assets/yearbook.jpg"
+  },
+  {
+    "id": 4,
+    "judul": "Geng Kampus Squad Portrait",
+    "kategori": "group",
+    "kategoriLabel": "Group",
+    "tahun": "2024",
+    "lokasi": "Main Studio Hall",
+    "deskripsi": "Foto grup sahabat kuliah penuh tawa dan keakraban dengan properti stool kayu.",
+    "gambar": "assets/foto-group.jpg"
+  },
+  {
+    "id": 5,
+    "judul": "Wisuda Bersama Keluarga",
+    "kategori": "wisuda",
+    "kategoriLabel": "Wisuda",
+    "tahun": "2024",
+    "lokasi": "Studio 1 (Classic)",
+    "deskripsi": "Momen penuh haru dan bangga orang tua merayakan kelulusan sang putri.",
+    "gambar": "assets/foto-wisuda-keluarga.jpg"
+  },
+  {
+    "id": 6,
+    "judul": "Family Milestone Portrait",
+    "kategori": "family",
+    "kategoriLabel": "Family",
+    "tahun": "2024",
+    "lokasi": "Main Studio Hall",
+    "deskripsi": "Potret keluarga 3 generasi dengan tone hangat dan tata komposisi seimbang.",
+    "gambar": "assets/foto-keluarga.jpg"
+  },
+  {
+    "id": 7,
+    "judul": "Pas Foto Nikah (Wanita)",
+    "kategori": "formal",
+    "kategoriLabel": "Formal",
+    "tahun": "2024",
+    "lokasi": "Studio 2",
+    "deskripsi": "Pas foto standar buku nikah KUA dengan background bersih.",
+    "gambar": "assets/foto-nikah-cewe.jpg"
+  },
+  {
+    "id": 8,
+    "judul": "Pas Foto Nikah (Pria)",
+    "kategori": "formal",
+    "kategoriLabel": "Formal",
+    "tahun": "2024",
+    "lokasi": "Studio 2",
+    "deskripsi": "Pas foto standar buku nikah KUA pria dengan proporsi rapi.",
+    "gambar": "assets/foto-nikah-cowo.jpg"
+  }
+]

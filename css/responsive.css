@@ -1,0 +1,415 @@
+
+.mobile-bottom-nav {
+  display: none;
+}
+
+@media (max-width: 1024px) {
+  .hero-headline {
+    font-size: 3.2rem;
+  }
+
+  .pillars-split-layout {
+    gap: 40px;
+  }
+
+  .packages-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .reviews-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .gallery-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .faq-layout {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Berikan padding bawah pada body agar tidak tertutup bottom bar */
+  body {
+    padding-bottom: 70px;
+  }
+
+  .site-header {
+    height: auto;
+  }
+
+  .nav-wrap {
+    height: 70px;
+  }
+
+  .mobile-toggle {
+    display: block;
+  }
+
+  /* Dropdown Menu Mobile */
+  .nav-menu {
+    display: none;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    background-color: #FFFFFF;
+    flex-direction: column;
+    padding: 24px;
+    gap: 16px;
+    border-bottom: 2px solid var(--border-subtle);
+    box-shadow: 0 15px 30px rgba(17, 34, 80, 0.12);
+  }
+
+  .nav-menu.open {
+    display: flex;
+  }
+
+  .nav-menu .nav-link {
+    font-size: 1.05rem;
+    padding: 8px 0;
+    display: block;
+    width: 100%;
+    border-bottom: 1px solid rgba(217, 203, 194, 0.4);
+  }
+
+  .nav-actions .btn-primary {
+    display: none; /* dialihkan ke mobile bottom bar */
+  }
+
+  .nav-actions .btn-cover-link {
+    padding: 6px 10px;
+    font-size: 0.78rem;
+  }
+
+  /* Hero Section: Tetap 2 Kolom untuk Layar Split / Tablet (641px - 1024px) */
+  .hero-section {
+    padding: 32px 0 44px;
+  }
+
+  .hero-main-layout {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    text-align: center;
+  }
+
+  .hero-content {
+    padding-right: 0;
+  }
+
+  .hero-badge-row {
+    justify-content: center;
+  }
+
+  .hero-headline {
+    font-size: clamp(2rem, 3.8vw, 2.5rem);
+    line-height: 1.18;
+  }
+
+  .hero-subtext {
+    margin: 0 auto 18px auto;
+    font-size: 0.92rem;
+    line-height: 1.55;
+  }
+
+  .hero-actions {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 16px;
+  }
+
+  .btn-hero-primary,
+  .btn-hero-secondary {
+    padding: 11px 16px;
+    font-size: 0.86rem;
+  }
+
+  .hero-hours-card {
+    width: 100%;
+    padding: 10px 14px;
+    box-sizing: border-box;
+  }
+
+  .hours-schedule {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 3px;
+  }
+
+  .schedule-sep {
+    display: none;
+  }
+
+  .hero-visual-wrap {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
+  .hero-photo-composition {
+    height: 320px;
+    max-width: 100%;
+  }
+
+  .photo-card-main {
+    width: 66%;
+    height: 280px;
+  }
+
+  .photo-card-sub {
+    width: 58%;
+    height: 220px;
+  }
+
+  /* Standar Layanan (Split Narrative) Mobile */
+  .pillars-section,
+  .packages-section,
+  .gallery-section,
+  .reviews-section {
+    padding: 50px 0;
+  }
+
+  .pillars-split-layout {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .pillars-intro {
+    position: static;
+  }
+
+  .pillar-card {
+    padding: 20px 22px;
+    gap: 16px;
+  }
+
+  /* Search & Filter Mobile */
+  .filter-search-container {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 16px;
+    padding: 14px;
+  }
+
+  .category-pills {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+    padding-bottom: 0;
+  }
+
+  .category-pills .filter-btn {
+    font-size: 0.8rem;
+    padding: 6px 12px;
+  }
+
+  .packages-grid {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 20px;
+    padding-bottom: 24px; /* Ruang untuk bayangan kartu saat digeser */
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .packages-grid::-webkit-scrollbar {
+    display: none;
+  }
+
+  .package-card {
+    flex: 0 0 82%;
+    max-width: 320px;
+    scroll-snap-align: center;
+  }
+
+  .package-body {
+    padding: 20px;
+  }
+
+  .package-title {
+    font-size: 1.3rem;
+  }
+
+  .package-price {
+    font-size: 1.6rem;
+  }
+
+  .package-features li {
+    font-size: 0.82rem;
+  }
+
+  /* Galeri Mobile */
+  .gallery-filter-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+    padding-bottom: 0;
+  }
+
+  .gallery-filter-btn {
+    font-size: 0.8rem;
+    padding: 6px 12px;
+  }
+
+  .gallery-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 4px;
+  }
+
+  /* Reviews Mobile (1 Kolom) */
+  .reviews-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  /* Lokasi & Peta Mobile */
+  .location-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .location-info-card {
+    padding: 26px 20px;
+  }
+
+  .map-embed-wrapper {
+    min-height: 300px;
+  }
+
+  /* Footer Mobile */
+  .footer-top {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    gap: 12px;
+    text-align: center;
+  }
+
+  /* ==========================================================
+     Tampilan Bottom Navigation Bar untuk Mobile
+     (App-like Experience on iPhone & Android)
+     ========================================================== */
+  .mobile-bottom-nav {
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 64px;
+    background: rgba(17, 34, 80, 0.94);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    border-top: 1px solid rgba(224, 197, 143, 0.4);
+    z-index: 1500;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0 6px;
+    box-shadow: 0 -4px 25px rgba(0, 0, 0, 0.35);
+  }
+
+  .mobile-nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: var(--swan-wing);
+    font-size: 0.65rem;
+    font-weight: 600;
+    text-decoration: none;
+    gap: 3px;
+    flex: 1;
+    padding: 6px 0;
+    transition: var(--transition-smooth);
+    position: relative;
+  }
+
+  .mobile-nav-item .nav-icon {
+    font-size: 1.2rem;
+    line-height: 1;
+    transition: transform 0.2s ease;
+  }
+
+  .mobile-nav-item.active .nav-icon {
+    transform: translateY(-2px);
+  }
+
+  .mobile-nav-item.active,
+  .mobile-nav-item:hover {
+    color: var(--quicksand);
+  }
+
+  .mobile-nav-item.active::after {
+    content: '';
+    position: absolute;
+    bottom: 2px;
+    width: 4px;
+    height: 4px;
+    background-color: var(--quicksand);
+    border-radius: 50%;
+    box-shadow: 0 0 6px var(--quicksand);
+  }
+
+  .mobile-nav-item.wa-highlight {
+    color: #25D366;
+    font-weight: 700;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-headline {
+    font-size: 2.15rem;
+  }
+
+  .section-title {
+    font-size: 1.95rem;
+  }
+
+  .gallery-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 4px;
+  }
+
+  .btn-primary, .btn-secondary {
+    width: 100%;
+  }
+
+  .hero-photo-composition {
+    height: 290px;
+  }
+
+  .photo-card-main {
+    width: 66%;
+    height: 260px;
+  }
+
+  .photo-card-sub {
+    width: 58%;
+    height: 210px;
+  }
+
+
+
+  .landmark-callout {
+    padding: 14px 16px;
+  }
+
+  .social-links-row {
+    flex-direction: column;
+  }
+
+  .social-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
