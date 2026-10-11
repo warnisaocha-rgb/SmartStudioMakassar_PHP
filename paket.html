@@ -7,21 +7,18 @@
   
   <meta name="description" content="Daftar harga dan paket foto transparan di Smart Studio Makassar. Tersedia paket wisuda, grup, dan foto personal dengan harga terjangkau.">
 
-    <!-- Favicon Official Logo -->
   <link rel="icon" type="image/png" href="assets/logo.png">
   <link rel="shortcut icon" type="image/png" href="assets/logo.png">
   <link rel="apple-touch-icon" href="assets/logo.png">
 
-  <!-- Custom Typography & Styles -->
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/responsive.css">
 </head>
 <body>
 
-  <!-- Golden Scroll Progress Bar -->
   <div id="scroll-progress-bar" class="scroll-progress-bar"></div>
 
-  <!-- Navigation Header (Bersih, Rapi & Elegan) -->
+  <!-- Navbar -->
   <header class="site-header">
     <div class="container nav-wrap">
       <a href="index.html" class="logo-brand">
@@ -63,7 +60,7 @@
         </div>
       </div>
 
-      <!-- Live Search & Filter Bar -->
+      <!-- Filter & Pencarian -->
       <div class="filter-search-container">
         <div class="search-box">
           <span class="search-icon"></span>
@@ -80,22 +77,19 @@
         </div>
       </div>
 
-      <!-- Spinner Loading AJAX -->
       <div id="katalog-loading" class="loading-indicator">
         <div class="spinner"></div>
         <p>Memuat daftar paket Smart Studio...</p>
       </div>
 
-      <!-- Empty State Filter -->
       <div id="katalog-empty" class="empty-state" style="display: none;">
         <p style="font-size: 1.1rem; font-weight: 600; color: var(--text-main);">Paket tidak ditemukan</p>
         <p style="font-size: 0.88rem; margin-top: 6px;">Coba gunakan kata kunci lain atau pilih tab filter "Semua Paket".</p>
       </div>
 
-      <!-- Grid Kartu Paket (Diisi via jQuery AJAX) -->
+      <!-- Daftar Paket -->
       <div class="packages-grid" id="katalog-grid"></div>
 
-      <!-- Toggle Expand Semua Paket -->
       <div class="katalog-toggle-wrap" id="katalog-toggle-wrap" style="display: none; text-align: center; margin-top: 36px;">
         <button type="button" id="btn-toggle-katalog" class="btn-expand-katalog">
           <span class="toggle-text">Lihat Semua Paket (15 Pilihan Layanan)</span>
@@ -146,7 +140,7 @@
     </div>
   </footer>
 
-  <!-- Lightbox Modal Container -->
+  <!-- Modal Preview -->
   <div id="lightbox-modal" role="dialog" aria-modal="true" aria-label="Pratinjau Foto">
     <div class="lightbox-content-box">
       <button type="button" class="lightbox-close-btn" id="lightbox-close" aria-label="Tutup Preview">&times;</button>

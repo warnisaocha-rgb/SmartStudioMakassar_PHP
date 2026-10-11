@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
 
 :root {
-  /* Exact Colors from User Palette */
+  /* Palet Warna */
   --royal-blue: #112250;
   --royal-blue-dark: #0A1533;
   --sapphire: #3C507D;
@@ -13,23 +13,23 @@
   --shellstone: #D9CBC2;
   --shellstone-light: #EBE4DE;
 
-  /* Theme Mapping */
-  --bg-primary: #F5F0E9;       /* Swan Wing */
+  /* Variabel Tema */
+  --bg-primary: #F5F0E9;
   --bg-surface: #FFFFFF;
-  --bg-secondary: #EBE4DE;     /* Light Shellstone */
-  --bg-dark: #112250;          /* Royal Blue */
+  --bg-secondary: #EBE4DE;
+  --bg-dark: #112250;
   --bg-dark-card: #0D193B;
 
-  --text-main: #112250;        /* Royal Blue */
-  --text-muted: #3C507D;       /* Sapphire */
+  --text-main: #112250;
+  --text-muted: #3C507D;
   --text-light: #6A7B9F;
-  --text-white: #F5F0E9;       /* Swan Wing */
-  --text-gold: #E0C58F;        /* Quicksand */
+  --text-white: #F5F0E9;
+  --text-gold: #E0C58F; 
 
-  --accent-primary: #E0C58F;   /* Quicksand Gold */
-  --accent-secondary: #3C507D; /* Sapphire Blue */
+  --accent-primary: #E0C58F;
+  --accent-secondary: #3C507D;
 
-  --border-subtle: #D9CBC2;    /* Shellstone */
+  --border-subtle: #D9CBC2;
   --border-strong: #3C507D;
   --border-gold: rgba(224, 197, 143, 0.4);
 
@@ -70,7 +70,7 @@ body {
   padding-bottom: 0;
 }
 
-/* Golden Scroll Progress Bar */
+/* Scroll Progress Bar */
 .scroll-progress-bar {
   position: fixed;
   top: 0;
@@ -108,7 +108,7 @@ button, input, select, textarea {
   padding: 0 24px;
 }
 
-/* Typography Helpers */
+/* Tipografi */
 .font-serif {
   font-family: var(--font-serif);
 }
@@ -152,7 +152,7 @@ button, input, select, textarea {
   margin-bottom: 40px;
 }
 
-/* Top Announcement Bar (Royal Blue & Quicksand) */
+/* Top Bar */
 #top-notification {
   background: linear-gradient(90deg, #0A1533 0%, #112250 50%, #0A1533 100%);
   color: var(--swan-wing);
@@ -193,7 +193,7 @@ button, input, select, textarea {
   color: var(--quicksand);
 }
 
-/*Navigation Header*/
+/* Header & Navbar */
 .site-header {
   position: sticky;
   top: 0;
@@ -399,7 +399,7 @@ button, input, select, textarea {
   transition: var(--transition-smooth);
 }
 
-/* Hero Section: Clean & Elegant Studio Atelier */
+/* Hero Section */
 .hero-section {
   padding: 50px 0 65px;
   position: relative;
@@ -533,7 +533,7 @@ button, input, select, textarea {
   box-shadow: 0 4px 16px rgba(37, 211, 102, 0.15);
 }
 
-/* Jam Operasional Studio - Elegan & Akurat */
+/* Jam Operasional */
 .hero-hours-card {
   background: rgba(255, 255, 255, 0.9);
   border: 1px solid var(--border-subtle);
@@ -614,7 +614,7 @@ button, input, select, textarea {
   font-size: 0.85rem;
 }
 
-/* Kolom Kanan: Tata Letak Foto Komposisi Lookbook (Dual Staggered Frame) */
+/* Foto Hero */
 .hero-visual-wrap {
   position: relative;
   display: flex;
@@ -662,7 +662,7 @@ button, input, select, textarea {
   color: var(--royal-blue);
 }
 
-/* Main Photo (Wisuda & Portrait) */
+/* Foto Utama */
 .photo-card-main {
   top: 0;
   left: 0;
@@ -677,7 +677,7 @@ button, input, select, textarea {
   z-index: 3;
 }
 
-/* Secondary Photo (Self Photo Remote) */
+/* Foto Kedua */
 .photo-card-sub {
   bottom: 0;
   right: 0;
@@ -694,7 +694,7 @@ button, input, select, textarea {
   z-index: 3;
 }
 
-/* Section: Brand Pillars & Standar Layanan (Split Narrative) */
+/* Standar Layanan */
 .pillars-section {
   padding: 90px 0;
   background-color: #FFFFFF;
@@ -764,7 +764,7 @@ button, input, select, textarea {
   margin: 0;
 }
 
-/* Section: Paket Layanan & Katalog (Dinamis AJAX) */
+/* Katalog Paket */
 .packages-section {
   padding: 100px 0;
   background-color: var(--bg-primary);
@@ -780,7 +780,7 @@ button, input, select, textarea {
 }
 
 
-/* Search and Filter Bar */
+/* Filter & Search */
 .filter-search-container {
   background-color: #FFFFFF;
   border: 1px solid var(--border-subtle);
@@ -858,7 +858,7 @@ button, input, select, textarea {
   box-shadow: 0 2px 8px rgba(17, 34, 80, 0.2);
 }
 
-/* Loading & Empty State */
+/* Status Loading */
 .loading-indicator {
   text-align: center;
   padding: 60px 0;
@@ -888,7 +888,7 @@ button, input, select, textarea {
   color: var(--text-muted);
 }
 
-/* Packages Grid */
+/* Grid Paket */
 .packages-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -1057,7 +1057,7 @@ button, input, select, textarea {
 }
 
 
-/* Toggle Expand Katalog */
+/* Toggle Katalog */
 .katalog-toggle-wrap {
   text-align: center;
   margin-top: 36px;
@@ -1097,7 +1097,7 @@ button, input, select, textarea {
   transform: rotate(180deg);
 }
 
-/* Section: Testimoni & Ulasan Google Maps (Social Proof) */
+/* Ulasan Pelanggan */
 .reviews-section {
   padding: 85px 0;
   background-color: var(--swan-wing);
@@ -1220,7 +1220,7 @@ button, input, select, textarea {
 }
 
 
-/* Section: Portofolio Galeri & Modal Lightbox */
+/* Galeri */
 .gallery-section {
   padding: 100px 0;
   background-color: #FFFFFF;
@@ -1323,7 +1323,7 @@ button, input, select, textarea {
   color: var(--shellstone);
 }
 
-/* Lightbox Modal */
+/* Modal Lightbox */
 #lightbox-modal {
   display: none;
   position: fixed;
@@ -1419,7 +1419,7 @@ button, input, select, textarea {
   line-height: 1.6;
 }
 
-/* Section: FAQ Accordion */
+/* FAQ */
 .faq-section {
   padding: 100px 0;
   background-color: var(--bg-primary);
@@ -1494,7 +1494,7 @@ button, input, select, textarea {
   padding-top: 16px;
 }
 
-/* Section: Lokasi & Kontak Studio */
+/* Lokasi */
 .location-section {
   padding: 100px 0;
   background-color: #FFFFFF;
@@ -1537,7 +1537,7 @@ button, input, select, textarea {
   line-height: 1.6;
 }
 
-/* Landmark Callout & Copy Button */
+/* Patokan Lokasi */
 .landmark-callout {
   background: #FFFDF9;
   border: 2px solid var(--quicksand);
@@ -1686,7 +1686,7 @@ button, input, select, textarea {
   color: rgba(245, 240, 233, 0.6);
 }
 
-/* Toast Floating Notification (Chaining demo) */
+/* Toast Notifikasi */
 #toast-notification {
   display: none;
   position: fixed;
@@ -1710,7 +1710,7 @@ button, input, select, textarea {
   display: none;
 }
 
-/* Responsive & Accessibility Fixes */
+/* Aksesibilitas */
 @media (max-width: 992px) {
   .gallery-grid { grid-template-columns: repeat(3, 1fr); }
 }
@@ -1722,7 +1722,7 @@ button, input, select, textarea {
   outline-offset: 3px;
 }
 
-/* --- COOL ADDITIONS (Animations & Back to Top) --- */
+/* Animasi & Back to Top */
 .reveal {
   opacity: 0;
   transform: translateY(40px);
@@ -1764,7 +1764,7 @@ button, input, select, textarea {
   box-shadow: 0 6px 20px rgba(17, 34, 80, 0.4);
 }
 
-/* --- PRELOADER (SPLASH SCREEN) --- */
+/* Preloader */
 #preloader {
   position: fixed;
   top: 0; 
@@ -1800,7 +1800,7 @@ button, input, select, textarea {
   0% { opacity: 0.4; }
   100% { opacity: 1; }
 }
-/* When loaded */
+/* Status Loaded */
 body.loaded #preloader {
   opacity: 0;
   visibility: hidden;

@@ -1,13 +1,9 @@
-/**
- * SMART STUDIO (@smartstudio.id_)
- * Main Application Logic
- * Main Application Script
- */
+// Script utama Smart Studio
 
 $(function () {
   "use strict";
 
-  // 1. Simpan Seleksi Elemen Sering Dipakai 
+  // Inisialisasi elemen
   const $window = $(window);
   const $header = $(".site-header");
   const $mobileToggle = $("#mobile-toggle");
@@ -36,14 +32,14 @@ $(function () {
   let isKatalogExpanded = false;
   const INITIAL_PAKET_LIMIT = 6;
 
-  // 2. Notification Bar & Header Scroll 
+  // Notifikasi header
   if ($closeNotifBtn.length) {
     $closeNotifBtn.on("click", function () {
       $topNotification.stop().slideUp(300);
     });
   }
 
-  // Golden Scroll Progress Bar 
+  // Progress bar scroll
   const $progressBar = $("#scroll-progress-bar");
 
   function updateScrollProgress() {
@@ -56,8 +52,6 @@ $(function () {
     }
   }
 
-  
-  // --- COOL ADDITIONS ---
   const $backToTop = $('<div id="back-to-top" title="Kembali ke atas"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 15l-6-6-6 6"/></svg></div>');
   $("body").append($backToTop);
 
@@ -65,7 +59,7 @@ $(function () {
     $("html, body").stop(true, true).animate({ scrollTop: 0 }, 600, "swing");
   });
 
-  // Tambahkan class reveal ke section penting secara dinamis
+  // Animasi scroll reveal
   $("section, .footer-bottom, .hero-content, .hero-photo-composition").addClass("reveal");
   
   function checkReveal() {
@@ -74,7 +68,6 @@ $(function () {
     
     $(".reveal").each(function() {
       const elementTop = $(this).offset().top;
-      // Aktifkan jika elemen sudah masuk viewport (dikurangi 80px agar mulus)
       if (scrollY + windowHeight > elementTop + 80) {
         $(this).addClass("active");
       }
@@ -87,7 +80,6 @@ $(function () {
     }
   }
   
-  // Trigger di awal load
   setTimeout(checkReveal, 100);
 
   $window.on("scroll", function () {
@@ -100,26 +92,24 @@ $(function () {
     }
   });
 
-  // Panggil sekali saat halaman selesai dimuat
   updateScrollProgress();
-    checkReveal();
+  checkReveal();
 
-  // Mobile menu toggle 
+  // Toggle menu mobile
   $mobileToggle.on("click", function () {
     $navMenu.toggleClass("open");
   });
 
-  // Tutup menu mobile saat tautan diklik
   $navMenu.on("click", ".nav-link", function () {
     $navMenu.removeClass("open");
   });
 
-  // Mobile bottom navigation active switcher 
+  // Navigasi mobile
   $(".mobile-bottom-nav").on("click", ".mobile-nav-item:not(.wa-highlight)", function () {
     $(this).addClass("active").siblings().removeClass("active");
   });
 
-  // Fallback Data Paket (Memastikan prototipe tetap berjalan lancar saat dibuka via file:// tanpa web server)
+  // Data paket fallback
   const FALLBACK_PAKET = [
   {
     "id": "self-photo-remote-25k",
@@ -329,7 +319,7 @@ $(function () {
   }
 ];
 
-  // 3. AJAX: Memuat Data Paket Studio 
+  // Load data paket via AJAX
   function loadPaketData() {
     $.ajax({
       url: "data/paket.json",
@@ -341,17 +331,16 @@ $(function () {
         renderPaketCards(paketDatabase);
       })
       .fail(function (xhr, status, error) {
-        console.warn("AJAX paket gagal atau protokol file:// aktif. Menggunakan fallback data paket lokal.", status, error);
+        console.warn("Gagal memuat paket:", error);
         paketDatabase = FALLBACK_PAKET;
         renderPaketCards(paketDatabase);
       })
       .always(function () {
-        // Sembunyikan spinner indicator 
         $katalogLoading.hide();
       });
   }
 
-  // Render Kartu Paket dengan Konstruksi DOM Aman 
+  // Render kartu paket
   function renderPaketCards(items) {
     $katalogContainer.empty();
 
@@ -362,14 +351,11 @@ $(function () {
     $katalogEmpty.hide();
 
     $.each(items, function (idx, item) {
-      // Buat elemen dengan pendekatan jQuery aman 
       const $card = $("<div></div>")
         .addClass("package-card")
         .attr("data-kategori", item.kategori)
         .attr("data-id", item.id);
 
-
-      // Thumbnail foto
       const $thumb = $("<div></div>").addClass("package-thumb");
       const $img = $("<img>")
         .attr("src", item.gambar)
@@ -377,27 +363,22 @@ $(function () {
         .attr("loading", "lazy");
       $thumb.append($img).attr("tabindex", "0").attr("role", "button").attr("aria-label", "Lihat foto " + item.nama);
 
-      // Body kartu
       const $body = $("<div></div>").addClass("package-body");
       const $cat = $("<div></div>").addClass("package-category").text(item.kategoriLabel);
       const $title = $("<h4></h4>").addClass("package-title").text(item.nama);
 
-      // Price Box
       const $priceBox = $("<div></div>").addClass("package-price-box");
       const $price = $("<span></span>").addClass("package-price").text(item.hargaFormat);
       const $time = $("<span></span>").addClass("package-session-time").text("• " + item.durasi);
       $priceBox.append($price, $time);
 
-      // Deskripsi
       const $desc = $("<p></p>").addClass("package-desc").text(item.deskripsi);
 
-      // Fasilitas List
       const $features = $("<ul></ul>").addClass("package-features");
       $.each(item.fasilitas, function (_, fas) {
         $features.append($("<li></li>").text(fas));
       });
 
-      // Footer & Tombol Aksi Langsung ke WhatsApp Resmi Smart Studio
       const $footer = $("<div></div>").addClass("package-footer");
       const pesanWA = 
         "Halo Admin Smart Studio (@smartstudio.id_)!\n" +
@@ -423,11 +404,10 @@ $(function () {
       $katalogContainer.append($card);
     });
 
-    // Inisialisasi tampilan saring awal (6 paket pertama ditampilkan)
     filterPaketCatalog();
   }
 
-  // 4. Live Search & Kategori Filter Paket 
+  // Filter dan pencarian paket 
   function filterPaketCatalog() {
     const keyword = $searchPaketInput.val().toLowerCase().trim();
     const activeCategory = $paketFilterBtns.filter(".active").attr("data-filter");
@@ -479,7 +459,6 @@ $(function () {
         });
       }
     } else {
-      // Sedang menyaring kategori atau mencari kata kunci: tampilkan seluruh kartu yang cocok
       $katalogToggleWrap.hide();
       $.each(matchingCards, function (_, $c) {
         $c.show();
@@ -489,7 +468,7 @@ $(function () {
     $katalogEmpty.toggle(matchingCards.length === 0);
   }
 
-  // Event Delegasi untuk klik thumbnail paket agar memunculkan lightbox
+  // Modal lightbox paket
   $katalogContainer.on("click keypress", ".package-thumb", function (e) {
     if (e.type === "keypress" && e.which !== 13) return;
     const $card = $(this).closest(".package-card");
@@ -504,30 +483,25 @@ $(function () {
     }
   });
 
-
-  // Event pencarian real-time via keyup 
   $searchPaketInput.on("keyup", function () {
     filterPaketCatalog();
   });
 
-  // Event tab filter kategori paket dengan Traversing Siblings 
   $paketFilterBtns.on("click", function (e) {
     e.preventDefault();
     $(this).addClass("active").siblings().removeClass("active");
     filterPaketCatalog();
   });
 
-  // Event Toggle Expand / Collapse Katalog Paket 
+  // Toggle katalog paket
   $btnToggleKatalog.on("click", function () {
     isKatalogExpanded = !isKatalogExpanded;
 
     if (isKatalogExpanded) {
-      // Munculkan sisa paket dengan efek fade halus 
       $(".package-card:hidden").stop(true, true).fadeIn(350);
       $btnToggleKatalog.addClass("expanded")
         .find(".toggle-text").text("Tampilkan Lebih Sedikit ▴");
     } else {
-      // Sembunyikan kembali paket ke-7 ke atas dengan slideUp 
       $(".package-card").each(function (i) {
         if (i >= INITIAL_PAKET_LIMIT) {
           $(this).stop(true, true).slideUp(250);
@@ -536,14 +510,13 @@ $(function () {
       $btnToggleKatalog.removeClass("expanded")
         .find(".toggle-text").text("Lihat Semua Paket (" + $(".package-card").length + " Pilihan Layanan) ▾");
 
-      // Gulir halus kembali ke posisi katalog atas 
       $("html, body").animate({
         scrollTop: $("#katalog").offset().top - 80
       }, 400);
     }
   });
 
-  // Fallback Data Galeri (Untuk memastikan portofolio tetap tampil saat protokol file:// aktif)
+  // Data galeri fallback
   const FALLBACK_GALERI = [
   {
     "id": 1,
@@ -627,7 +600,7 @@ $(function () {
   }
 ];
 
-  // 6. AJAX: Memuat Portofolio Galeri Studio
+  // Load data galeri via AJAX
   function loadGaleriData() {
     $.ajax({
       url: "data/galeri.json",
@@ -639,7 +612,7 @@ $(function () {
         renderGalleryGrid(galeriDatabase);
       })
       .fail(function (xhr, status, error) {
-        console.warn("AJAX galeri gagal atau protokol file:// aktif. Menggunakan fallback data galeri lokal.", status, error);
+        console.warn("Gagal memuat galeri:", error);
         galeriDatabase = FALLBACK_GALERI;
         renderGalleryGrid(galeriDatabase);
       });
@@ -670,7 +643,7 @@ $(function () {
     });
   }
 
-  // Filter Kategori Galeri 
+  // Filter galeri
   $galleryFilterBtns.on("click", function (e) {
     e.preventDefault();
     $(this).addClass("active").siblings().removeClass("active");
@@ -684,7 +657,7 @@ $(function () {
     });
   });
 
-  // 7. Lightbox Modal Preview )
+  // Modal lightbox galeri
   $galleryContainer.on("click", ".gallery-item", function () {
     const itemId = parseInt($(this).attr("data-id"), 10);
     const photoData = galeriDatabase.find(function (g) {
@@ -713,30 +686,26 @@ $(function () {
     closeLightbox();
   });
 
-  // Klik di luar content box untuk menutup modal
   $lightboxModal.on("click", function (e) {
     if ($(e.target).is("#lightbox-modal")) {
       closeLightbox();
     }
   });
 
-  // Escape key untuk menutup modal
   $(document).on("keydown", function (e) {
     if (e.key === "Escape" && $lightboxModal.is(":visible")) {
       closeLightbox();
     }
   });
 
-  // 8. FAQ Accordion: slideToggle + .stop() 
+  // FAQ accordion
   $(".faq-list").on("click", ".faq-trigger", function () {
     const $parentItem = $(this).closest(".faq-item");
     const $content = $parentItem.find(".faq-content");
     const isOpen = $parentItem.hasClass("active");
 
-    // Tutup item accordion lain yang sedang terbuka
     $parentItem.siblings().removeClass("active").find(".faq-content").stop(true, true).slideUp(300);
 
-    // Toggle item yang diklik
     if (isOpen) {
       $parentItem.removeClass("active");
       $content.stop(true, true).slideUp(300);
@@ -746,9 +715,7 @@ $(function () {
     }
   });
 
-
-
-  // 9. Salin Alamat & Patokan Studio 
+  // Salin alamat studio
   function showToast(message) {
     const $toast = $("#toast-notification");
     $toast.text(message).stop(true, true).fadeIn(300).delay(2800).fadeOut(400);
@@ -773,16 +740,14 @@ $(function () {
     }
   });
 
-  // 10. Inisialisasi Data Saat Aplikasi Berjalan
+  // Inisialisasi data
   loadPaketData();
   loadGaleriData();
 
 });
 
-
-  // --- PRELOADER LOGIC ---
+  // Preloader
   $(window).on("load", function() {
-    // Jalankan animasi jika splash screen belum pernah dilihat di sesi ini
     if (sessionStorage.getItem('splashSeen') !== 'true') {
       setTimeout(function() {
         $("body").addClass("loaded");

@@ -31,7 +31,6 @@
 }
 
 @media (max-width: 768px) {
-  /* Berikan padding bawah pada body agar tidak tertutup bottom bar */
   body {
     padding-bottom: 70px;
   }
@@ -48,7 +47,7 @@
     display: block;
   }
 
-  /* Dropdown Menu Mobile */
+  /* Menu Mobile */
   .nav-menu {
     display: none;
     position: absolute;
@@ -76,7 +75,7 @@
   }
 
   .nav-actions .btn-primary {
-    display: none; /* dialihkan ke mobile bottom bar */
+    display: none;
   }
 
   .nav-actions .btn-cover-link {
@@ -84,7 +83,7 @@
     font-size: 0.78rem;
   }
 
-  /* Hero Section: Tetap 2 Kolom untuk Layar Split / Tablet (641px - 1024px) */
+  /* Hero Mobile */
   .hero-section {
     padding: 32px 0 44px;
   }
@@ -164,7 +163,7 @@
     height: 220px;
   }
 
-  /* Standar Layanan (Split Narrative) Mobile */
+  /* Keunggulan Mobile */
   .pillars-section,
   .packages-section,
   .gallery-section,
@@ -213,7 +212,7 @@
     overflow-x: auto;
     scroll-snap-type: x mandatory;
     gap: 20px;
-    padding-bottom: 24px; /* Ruang untuk bayangan kartu saat digeser */
+    padding-bottom: 24px;
     -webkit-overflow-scrolling: touch;
     scrollbar-width: none;
     -ms-overflow-style: none;
@@ -264,13 +263,13 @@
     gap: 4px;
   }
 
-  /* Reviews Mobile (1 Kolom) */
+  /* Reviews Mobile */
   .reviews-grid {
     grid-template-columns: 1fr;
     gap: 18px;
   }
 
-  /* Lokasi & Peta Mobile */
+  /* Lokasi Mobile */
   .location-grid {
     grid-template-columns: 1fr;
     gap: 30px;
@@ -296,10 +295,7 @@
     text-align: center;
   }
 
-  /* ==========================================================
-     Tampilan Bottom Navigation Bar untuk Mobile
-     (App-like Experience on iPhone & Android)
-     ========================================================== */
+  /* Bottom Nav Mobile */
   .mobile-bottom-nav {
     display: flex;
     position: fixed;
